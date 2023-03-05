@@ -233,7 +233,7 @@ spec:
                 secretKeyRef:
                   key: COOLSMS_CLIENT_SENDER
                   name: nestjs-secret
-          image: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-backend:dev
+          image: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-market-backend:dev
           imagePullPolicy: Always
           name: nestjs-app
           ports:
