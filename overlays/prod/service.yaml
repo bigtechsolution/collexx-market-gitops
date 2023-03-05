@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nestjs-app
+  labels:
+    app: nestjs-app
+  annotations:
+    prometheus.io/path: /api/metrics,
+    prometheus.io/scrape: true
+  namespace: prod
+spec:
+  ports:
+    - name: http
+      port: 4000
+      protocol: TCP
+      targetPort: 4000
+  selector:
+    app: nestjs-app
+  type: ClusterIP

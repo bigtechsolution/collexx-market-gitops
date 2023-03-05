@@ -1,0 +1,257 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nestjs-app
+  name: nestjs-app
+  namespace: prod
+spec:
+  replicas: 3
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: nestjs-app
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nestjs-app
+        type: app
+    spec:
+      containers:
+        - env:
+            - name: SSL
+              valueFrom:
+                secretKeyRef:
+                  key: SSL
+                  name: nestjs-secret
+            - name: APP_PORT
+              valueFrom:
+                secretKeyRef:
+                  key: APP_PORT
+                  name: nestjs-secret
+            - name: APP_PREFIX
+              valueFrom:
+                secretKeyRef:
+                  key: APP_PREFIX
+                  name: nestjs-secret
+            - name: DB_SQLDEBUG
+              valueFrom:
+                secretKeyRef:
+                  key: DB_SQLDEBUG
+                  name: nestjs-secret
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  key: DB_HOST
+                  name: nestjs-secret
+            - name: DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  key: DB_PORT
+                  name: nestjs-secret
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: DB_USERNAME
+                  name: nestjs-secret
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: DB_PASSWORD
+                  name: nestjs-secret
+            - name: DB_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  key: DB_DATABASE
+                  name: nestjs-secret
+            - name: REDIS_URI
+              valueFrom:
+                secretKeyRef:
+                  key: REDIS_URI
+                  name: nestjs-secret
+            - name: REDIS_TTL
+              valueFrom:
+                secretKeyRef:
+                  key: REDIS_TTL
+                  name: nestjs-secret
+            - name: REDIS_PORT
+              valueFrom:
+                secretKeyRef:
+                  key: REDIS_PORT
+                  name: nestjs-secret
+            - name: RABBITMQ_URI
+              valueFrom:
+                secretKeyRef:
+                  key: RABBITMQ_URI
+                  name: nestjs-secret
+            - name: RABBITMQ_EXCHANGE
+              valueFrom:
+                secretKeyRef:
+                  key: RABBITMQ_EXCHANGE
+                  name: nestjs-secret
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  key: JWT_SECRET
+                  name: nestjs-secret
+            - name: JWT_REFRESH_EXPIRY
+              valueFrom:
+                secretKeyRef:
+                  key: JWT_REFRESH_EXPIRY
+                  name: nestjs-secret
+            - name: JWT_ACCESS_EXPIRY
+              valueFrom:
+                secretKeyRef:
+                  key: JWT_ACCESS_EXPIRY
+                  name: nestjs-secret
+            - name: SENTRY_DSN
+              valueFrom:
+                secretKeyRef:
+                  key: SENTRY_DSN
+                  name: nestjs-secret
+            - name: SENTRY_DEBUG
+              valueFrom:
+                secretKeyRef:
+                  key: SENTRY_DEBUG
+                  name: nestjs-secret
+            - name: S3_CONNECTION_REGION
+              valueFrom:
+                secretKeyRef:
+                  key: S3_CONNECTION_REGION
+                  name: nestjs-secret
+            - name: S3_CONNECTION_ENDPOINT
+              valueFrom:
+                secretKeyRef:
+                  key: S3_CONNECTION_ENDPOINT
+                  name: nestjs-secret
+            - name: S3_REGION
+              valueFrom:
+                secretKeyRef:
+                  key: S3_REGION
+                  name: nestjs-secret
+            - name: SES_REGION
+              valueFrom:
+                secretKeyRef:
+                  key: SES_REGION
+                  name: nestjs-secret
+            - name: S3_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  key: S3_ACCESS_KEY_ID
+                  name: nestjs-secret
+            - name: S3_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: S3_SECRET_ACCESS_KEY
+                  name: nestjs-secret
+            - name: S3_BUCKET_NAME
+              valueFrom:
+                secretKeyRef:
+                  key: S3_BUCKET_NAME
+                  name: nestjs-secret
+            - name: S3_IMAGE_URL
+              valueFrom:
+                secretKeyRef:
+                  key: S3_IMAGE_URL
+                  name: nestjs-secret
+            - name: KAKAO_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  key: KAKAO_CLIENT_ID
+                  name: nestjs-secret
+            - name: KAKAO_SECRET
+              valueFrom:
+                secretKeyRef:
+                  key: KAKAO_SECRET
+                  name: nestjs-secret
+            - name: NAVER_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  key: NAVER_CLIENT_ID
+                  name: nestjs-secret
+            - name: NAVER_SECRET
+              valueFrom:
+                secretKeyRef:
+                  key: NAVER_SECRET
+                  name: nestjs-secret
+            - name: GOOGLE_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  key: GOOGLE_CLIENT_ID
+                  name: nestjs-secret
+            - name: GOOGLE_SECRET
+              valueFrom:
+                secretKeyRef:
+                  key: GOOGLE_SECRET
+                  name: nestjs-secret
+            - name: NEXT_PUBLIC_URL
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_URL
+                  name: nestjs-secret
+            - name: AWS_SENDER_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  key: AWS_SENDER_EMAIL
+                  name: nestjs-secret
+            - name: TWILLO_ACCOUNT_SID
+              valueFrom:
+                secretKeyRef:
+                  key: TWILLO_ACCOUNT_SID
+                  name: nestjs-secret
+            - name: TWILLO_AUTH_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: TWILLO_AUTH_TOKEN
+                  name: nestjs-secret
+            - name: TWILLO_FROM
+              valueFrom:
+                secretKeyRef:
+                  key: TWILLO_FROM
+                  name: nestjs-secret
+            - name: TOSS_PAYMENTS_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: TOSS_PAYMENTS_SECRET_KEY
+                  name: nestjs-secret
+            - name: COOLSMS_CLIENT_API_ID
+              valueFrom:
+                secretKeyRef:
+                  key: COOLSMS_CLIENT_API_ID
+                  name: nestjs-secret
+            - name: COOLSMS_CLIENT_API_SECRET
+              valueFrom:
+                secretKeyRef:
+                  key: COOLSMS_CLIENT_API_SECRET
+                  name: nestjs-secret
+            - name: COOLSMS_CLIENT_SENDER
+              valueFrom:
+                secretKeyRef:
+                  key: COOLSMS_CLIENT_SENDER
+                  name: nestjs-secret
+          image: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-backend:latest
+          imagePullPolicy: Always
+          name: nestjs-app
+          ports:
+            - containerPort: 4000
+              name: http
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /api/health
+              port: 4000
+              scheme: HTTP
+            initialDelaySeconds: 10
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 500m
+              memory: 512Mi
