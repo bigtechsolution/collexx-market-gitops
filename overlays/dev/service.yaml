@@ -4,7 +4,7 @@ metadata:
   name: nestjs-app
   labels:
     app: nestjs-app
-  namespace: dev
+  namespace: market-dev
 spec:
   ports:
     - name: http

@@ -4,7 +4,7 @@ metadata:
   labels:
     app: nestjs-app
   name: nestjs-app
-  namespace: prod
+  namespace: market-prod
 spec:
   replicas: 3
   revisionHistoryLimit: 2

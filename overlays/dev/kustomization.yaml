@@ -1,8 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
-- name: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-backend
-  newName: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-backend
+- name: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-market-backend
+  newName: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-market-backend
   newTag: 634b1a0ae6e8e385049ac8da2e4aec2642d4853f
 - name: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-market-backend
   newName: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-market-backend

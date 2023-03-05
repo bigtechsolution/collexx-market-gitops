@@ -7,6 +7,6 @@ resources:
 - service.yaml
 - namespace.yaml
 images:
-- name: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-backend
-  newName: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-backend
+- name: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-market-backend
+  newName: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-market-backend
   newTag: 1a542af0eb708f76e3af8c49889a7d52c866f2bf
