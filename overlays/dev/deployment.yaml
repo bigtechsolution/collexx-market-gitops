@@ -233,6 +233,36 @@ spec:
                 secretKeyRef:
                   key: COOLSMS_CLIENT_SENDER
                   name: nestjs-secret
+            - name: SEED_CONTRACT_ADDRESS
+              valueFrom:
+                secretKeyRef:
+                  key: SEED_CONTRACT_ADDRESS
+                  name: nestjs-secret
+            - name: ALCHEMY_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: ALCHEMY_API_KEY
+                  name: nestjs-secret
+            - name: ALCHEMY_NETWORK
+              valueFrom:
+                secretKeyRef:
+                  key: ALCHEMY_NETWORK
+                  name: nestjs-secret
+            - name: ALCHEMY_ENDPOINT
+              valueFrom:
+                secretKeyRef:
+                  key: ALCHEMY_ENDPOINT
+                  name: nestjs-secret
+            - name: ALCHEMY_WS_ENDPOINT
+              valueFrom:
+                secretKeyRef:
+                  key: ALCHEMY_WS_ENDPOINT
+                  name: nestjs-secret
+            - name: PROXY_REGISTRY_CONTRACT_ADDRESS
+              valueFrom:
+                secretKeyRef:
+                  key: PROXY_REGISTRY_CONTRACT_ADDRESS
+                  name: nestjs-secret
           image: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-market-backend:dev
           imagePullPolicy: Always
           name: nestjs-app
