@@ -270,13 +270,6 @@ spec:
             - containerPort: 4000
               name: http
               protocol: TCP
-          readinessProbe:
-            failureThreshold: 3
-            httpGet:
-              path: /api/health
-              port: 4000
-              scheme: HTTP
-            initialDelaySeconds: 10
           resources:
             limits:
               cpu: 500m
