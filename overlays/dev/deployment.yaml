@@ -270,10 +270,3 @@ spec:
             - containerPort: 4000
               name: http
               protocol: TCP
-          resources:
-            limits:
-              cpu: 500m
-              memory: 512Mi
-            requests:
-              cpu: 500m
-              memory: 512Mi
