@@ -3,7 +3,7 @@ kind: Kustomization
 images:
 - name: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-market-backend
   newName: 619376925781.dkr.ecr.ap-northeast-2.amazonaws.com/cx-auction-market-backend
-  newTag: dc2f80b5b9f0201a06b3d82d3d09c1daa9a51f66
+  newTag: cd3d68cc0ae72cf1525e2c9065081d9f5fb17ee2
 resources:
 - secret.yaml
 - deployment.yaml
